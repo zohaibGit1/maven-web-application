@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://52.56.95.185:9980/mithuntechnologies/repository/icicibank-releases/</url>
+	      <url>http://13.48.84.250:8081/repository/facebook-release-repo/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://52.56.95.185:9980/mithuntechnologies/repository/icicibank-snapshot/</url>
+	      <url>http://13.48.84.250:8081/repository/facebook-snapshot-repo/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
