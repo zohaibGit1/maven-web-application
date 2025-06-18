@@ -1,5 +1,12 @@
 node {
     def mavenName = tool name: "maven3.9.9"
+
+	echo "The Node name is: " ${env.NODE_NAME}
+	echo "The Job Name is: " ${env.JOB_NAME}
+	echo "The Job Name is: " ${env.BUILD_NUMBER}
+
+
+
     // Getting the code from the SCM
     stage('Checkout') {
         git branch: 'development', credentialsId: '04cc15da-0b18-4680-894e-f9b124cb21fb', 
