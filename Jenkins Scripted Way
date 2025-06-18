@@ -1,0 +1,24 @@
+node {
+    def mavenName = tool name: "maven3.9.9"
+    // Getting the code from the SCM
+    stage('Checkout') {
+        git branch: 'development', credentialsId: '04cc15da-0b18-4680-894e-f9b124cb21fb', 
+        url: 'https://github.com/zohaibGit1/maven-web-application.git'
+    }
+    // Now Create the Package 
+    stage('Build') {
+        sh "$mavenName/bin/mvn clean package"
+    }
+    // Generate the SonarQube Report
+    stage('SonarQube Report') {
+        sh "$mavenName/bin/mvn sonar:sonar"
+    }
+    stage('Artificat Repository') {
+        sh "$mavenName/bin/mvn deploy"
+    }
+    stage('Deploy into tomcat Server') {
+sshagent(['9d973051-369f-4e16-b2b4-2fb90704a4a5']) {
+    	sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.60.18.21:/opt/apache-tomcat-9.0.105/webapps"
+	}
+}
+}
