@@ -1,9 +1,9 @@
 node {
     def mavenName = tool name: "maven3.9.9"
 
-	echo "The Node name is: " ${env.NODE_NAME}
-	echo "The Job Name is: " ${env.JOB_NAME}
-	echo "The Job Name is: " ${env.BUILD_NUMBER}
+	echo "The Node name is: ${env.NODE_NAME} "
+	echo "The Job Name is:  ${env.JOB_NAME} "
+	echo "The Job Name is: ${env.BUILD_NUMBER} "
 
 
 
